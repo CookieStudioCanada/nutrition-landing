@@ -86,9 +86,22 @@ body {
   border-color: var(--accent-dark);
 }
 
+/* Full-page sections */
+.page-screen {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0 2.5rem;
+  box-sizing: border-box;
+}
+
+.page-screen > .container {
+  width: 100%;
+}
+
 /* Hero */
 .hero {
-  padding: 7rem 0 3.5rem;
   background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 45%, #f8faf9 100%);
   position: relative;
   overflow: hidden;
@@ -412,47 +425,9 @@ body {
 .fill-orange { background: var(--orange); }
 .fill-red { background: var(--red); }
 
-/* Log your way */
-.section-compact {
-  padding: 3rem 0;
-}
-
-.log-way-card {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
-
-.log-way-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
-  margin: 0 auto 1rem;
-}
-
-.log-way-card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-}
-
-.log-way-card p {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  margin-bottom: 0;
-  line-height: 1.55;
-}
-
 /* Sections */
 .section {
-  padding: 5rem 0;
+  padding: 0;
 }
 
 .section-alt {
@@ -641,7 +616,7 @@ body {
 
 /* CTA */
 .cta-section {
-  padding-bottom: 4rem;
+  padding-bottom: 2.5rem;
 }
 
 .cta-card {
@@ -736,8 +711,8 @@ body {
 
 /* Responsive */
 @media (max-width: 991.98px) {
-  .hero {
-    padding: 5.5rem 0 2rem;
+  .page-screen {
+    padding: 4.75rem 0 2rem;
   }
 
   .hero-copy {
@@ -767,14 +742,6 @@ body {
     margin-top: 0.85rem;
   }
 
-  .section {
-    padding: 3rem 0;
-  }
-
-  .section-compact {
-    padding: 1.75rem 0;
-  }
-
   .section-header {
     margin-bottom: 1.75rem;
   }
@@ -800,18 +767,6 @@ body {
 
   .nutrients-copy .lead-sm {
     font-size: 0.9rem;
-  }
-
-  .log-way-card {
-    padding: 1.1rem;
-  }
-
-  .log-way-card h3 {
-    font-size: 0.95rem;
-  }
-
-  .log-way-card p {
-    font-size: 0.82rem;
   }
 
   .feature-card {
@@ -851,12 +806,13 @@ body {
     font-size: 0.82rem;
   }
 
-  .cta-section {
-    padding-bottom: 2.5rem;
-  }
 }
 
 @media (min-width: 992px) {
+  .page-screen {
+    padding: 6rem 0 3rem;
+  }
+
   .hero-trust {
     flex-direction: column;
     gap: 0.55rem;
@@ -937,8 +893,8 @@ body {
 }
 
 @media (max-width: 575.98px) {
-  .hero {
-    padding-top: 5rem;
+  .page-screen {
+    padding-top: 4.5rem;
   }
 
   .hero-title {

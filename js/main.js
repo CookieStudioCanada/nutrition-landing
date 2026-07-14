@@ -27,7 +27,7 @@
   });
 
   const fadeTargets = document.querySelectorAll(
-    ".feature-card, .log-way-card, .nutrient-dashboard, .privacy-visual, .cta-card"
+    ".feature-card, .nutrient-dashboard, .privacy-visual, .cta-card"
   );
 
   fadeTargets.forEach(function (el) {
@@ -52,10 +52,6 @@
 
   document.querySelectorAll(".feature-card").forEach(function (card, i) {
     card.style.transitionDelay = i * 0.07 + "s";
-  });
-
-  document.querySelectorAll(".log-way-card").forEach(function (card, i) {
-    card.style.transitionDelay = i * 0.1 + "s";
   });
 
   const appStoreBtn = document.querySelector(".app-store-btn");
