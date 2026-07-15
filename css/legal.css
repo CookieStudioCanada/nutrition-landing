@@ -1,0 +1,190 @@
+/* Legal & help pages */
+
+.legal-page {
+  padding: 6rem 0 3rem;
+  background: var(--bg);
+}
+
+.legal-header {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+.legal-header h1 {
+  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.legal-meta {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.legal-summary {
+  background: var(--bg-alt);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.legal-body {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.legal-body h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.legal-body h2:first-child {
+  margin-top: 0;
+}
+
+.legal-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.legal-body p,
+.legal-body li {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.legal-body p {
+  margin-bottom: 0.85rem;
+}
+
+.legal-body ul,
+.legal-body ol {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.legal-body li {
+  margin-bottom: 0.4rem;
+}
+
+.legal-body a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.88rem;
+}
+
+.legal-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.legal-nav a:hover {
+  color: var(--accent);
+}
+
+.legal-nav a.is-current {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Help center */
+
+.help-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.help-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+}
+
+.help-card h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.help-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.help-faq details {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.65rem;
+  background: #fff;
+}
+
+.help-faq summary {
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.help-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.help-faq details[open] summary {
+  margin-bottom: 0.65rem;
+}
+
+.help-faq p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.help-contact {
+  background: linear-gradient(135deg, #f0fdf4, #e8f5e9);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.help-contact h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.help-contact p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 575.98px) {
+  .legal-page {
+    padding-top: 5rem;
+  }
+}
