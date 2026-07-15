@@ -35,17 +35,21 @@
 
   <!-- Hero -->
   <header class="hero page-screen" id="top">
-    <div class="container">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-shell">
       <div class="row align-items-center g-4 g-lg-5">
         <div class="col-lg-5 hero-copy">
           <p class="hero-badge">AI · iOS · On-device</p>
-          <h1 class="hero-title"><span class="hero-title-line">Snap a meal.</span> <span class="hero-title-line">See every macro.</span></h1>
-          <p class="hero-lead">Photo, text, or chat — full nutrition in seconds. No database hunting.</p>
+          <h1 class="hero-title">
+            <span class="hero-title-line">Snap a meal.</span>
+            <span class="hero-title-line">See every <em>macro</em>.</span>
+          </h1>
+          <p class="hero-lead">Photo, text, or chat — full nutrition in seconds.</p>
           <div class="hero-actions">
             <a class="btn btn-success btn-hero-primary" href="#download">Coming to App Store</a>
             <a class="btn btn-outline-secondary btn-hero-secondary" href="#features">Features</a>
           </div>
-          <ul class="hero-trust list-unstyled mb-0">
+          <ul class="hero-trust list-unstyled mb-0 d-none d-lg-flex">
             <li><i class="bi bi-camera-fill"></i> Photo logging</li>
             <li><i class="bi bi-shield-lock-fill"></i> On your iPhone</li>
             <li><i class="bi bi-chat-heart-fill"></i> Personal coach</li>
@@ -109,6 +113,38 @@
                   <span class="macro-val">6g</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-mobile-preview d-lg-none" aria-hidden="true">
+        <div class="hero-preview-card">
+          <div class="hero-preview-photo">
+            <div class="demo-food-plate">
+              <span class="food-item food-salmon"></span>
+              <span class="food-item food-rice"></span>
+              <span class="food-item food-greens"></span>
+              <span class="food-item food-avocado"></span>
+            </div>
+            <div class="demo-scan-line"></div>
+            <div class="demo-viewfinder">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <span class="hero-preview-chip"><i class="bi bi-stars"></i> AI scan</span>
+          </div>
+          <div class="hero-preview-body">
+            <div class="hero-preview-head">
+              <span class="hero-preview-check"><i class="bi bi-check-lg"></i></span>
+              <div>
+                <strong>Salmon rice bowl</strong>
+                <span>520 kcal · logged</span>
+              </div>
+            </div>
+            <div class="hero-preview-macros">
+              <div class="hero-preview-macro"><span>Protein</span><div class="macro-bar"><div class="macro-fill fill-green" style="width:72%"></div></div><span>38g</span></div>
+              <div class="hero-preview-macro"><span>Carbs</span><div class="macro-bar"><div class="macro-fill fill-yellow" style="width:58%"></div></div><span>52g</span></div>
+              <div class="hero-preview-macro"><span>Fat</span><div class="macro-bar"><div class="macro-fill fill-orange" style="width:45%"></div></div><span>18g</span></div>
             </div>
           </div>
         </div>
@@ -274,9 +310,10 @@
   </section>
 
   <!-- Download CTA -->
-  <section class="section cta-section page-screen" id="download">
-    <div class="container text-center">
-      <div class="cta-card">
+  <section class="section cta-section page-screen page-screen-end" id="download">
+    <div class="container cta-shell">
+      <div class="cta-card fade-in">
+        <span class="cta-mark">🍎</span>
         <h2>Ready to eat with clarity?</h2>
         <p class="cta-lead mb-0">Coming soon to the App Store · iOS 18.5+</p>
         <a class="btn btn-light app-store-btn" href="#" aria-label="Download on the App Store — coming soon">
@@ -284,19 +321,15 @@
           App Store — Coming soon
         </a>
       </div>
+      <footer class="site-footer cta-footer">
+        <div class="footer-inner">
+          <span class="footer-brand"><span class="brand-icon">🍎</span> Nutrition</span>
+          <span class="footer-copy">© 2026 Cookie Technologies Canada</span>
+          <a class="footer-contact" href="mailto:cookietechnologiescanada@gmail.com">Contact</a>
+        </div>
+      </footer>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-brand"><span class="brand-icon">🍎</span> Nutrition</span>
-        <span class="text-secondary small">© 2026 Cookie Technologies Canada</span>
-        <a class="footer-contact small" href="mailto:cookietechnologiescanada@gmail.com">Contact</a>
-      </div>
-    </div>
-  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>

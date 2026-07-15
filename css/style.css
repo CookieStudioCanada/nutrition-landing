@@ -23,6 +23,7 @@
 
 html {
   overflow-x: clip;
+  scroll-snap-type: y proximity;
 }
 
 body {
@@ -89,33 +90,66 @@ body {
 /* Full-page sections */
 .page-screen {
   min-height: 100svh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 5rem 0 2.5rem;
   box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
-.page-screen > .container {
+.page-screen > .container,
+.page-screen > .hero-shell,
+.page-screen > .cta-shell {
   width: 100%;
+}
+
+.page-screen-end {
+  justify-content: stretch;
+  padding: 0;
+  background: linear-gradient(160deg, #2ecc71 0%, var(--accent) 42%, var(--accent-dark) 100%);
+  color: #fff;
+}
+
+.cta-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding: 5.5rem 1rem 1.25rem;
+  box-sizing: border-box;
 }
 
 /* Hero */
 .hero {
-  background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 45%, #f8faf9 100%);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
-.hero::before {
-  content: "";
+.hero-bg {
   position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(40, 167, 69, 0.12) 0%, transparent 70%);
-  pointer-events: none;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(40, 167, 69, 0.22) 0%, transparent 42%),
+    radial-gradient(circle at 10% 88%, rgba(40, 167, 69, 0.14) 0%, transparent 38%),
+    linear-gradient(165deg, #effdf3 0%, #ffffff 48%, #f4fbf6 100%);
+  z-index: 0;
+}
+
+.hero-shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-height: calc(100svh - 5rem);
 }
 
 .hero-copy {
@@ -189,6 +223,113 @@ body {
 .hero-trust i {
   color: var(--accent);
   font-size: 1rem;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hero-mobile-preview {
+  margin-top: 1.35rem;
+  position: relative;
+}
+
+.hero-preview-card {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(16, 72, 36, 0.16),
+    0 0 0 1px rgba(0, 0, 0, 0.04);
+  transform: rotate(-1.5deg);
+  animation: heroCardFloat 5s ease-in-out infinite;
+}
+
+.hero-preview-photo {
+  position: relative;
+  height: 148px;
+  background: linear-gradient(145deg, #fff8f0, #ffe8d6);
+  overflow: hidden;
+}
+
+.hero-preview-photo .demo-food-plate {
+  transform: scale(0.92);
+}
+
+.hero-preview-chip {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--accent-dark);
+  font-size: 0.68rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.hero-preview-body {
+  padding: 0.95rem 1rem 1.05rem;
+}
+
+.hero-preview-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-preview-check {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-preview-head strong {
+  display: block;
+  font-size: 0.92rem;
+}
+
+.hero-preview-head span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.hero-preview-macros {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.hero-preview-macro {
+  display: grid;
+  grid-template-columns: 46px 1fr 32px;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.hero-preview-macro span:last-child {
+  font-weight: 700;
+  color: var(--text);
+  text-align: right;
+}
+
+@keyframes heroCardFloat {
+  0%, 100% { transform: rotate(-1.5deg) translateY(0); }
+  50% { transform: rotate(-1.5deg) translateY(-8px); }
 }
 
 /* Hero demo — photo → AI → result */
@@ -616,40 +757,77 @@ body {
 
 /* CTA */
 .cta-section {
-  padding-bottom: 2.5rem;
+  padding: 0;
 }
 
 .cta-card {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-  color: #fff;
-  border-radius: 20px;
-  padding: 2.25rem 1.5rem;
+  width: 100%;
   max-width: 520px;
   margin: 0 auto;
+  text-align: center;
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.cta-mark {
+  display: inline-flex;
+  width: 3.25rem;
+  height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.65rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.16);
+  margin-bottom: 1rem;
 }
 
 .cta-card h2 {
   font-weight: 800;
-  font-size: clamp(1.35rem, 4vw, 1.75rem);
-  margin-bottom: 0.35rem;
+  font-size: clamp(1.75rem, 6vw, 2.35rem);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 .cta-lead {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 1.1rem !important;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 1.35rem !important;
 }
 
 .app-store-btn {
-  font-weight: 600;
-  font-size: 0.92rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
-  padding: 0.65rem 1.35rem;
-  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
 }
 
-/* Footer */
+.cta-footer {
+  width: 100%;
+  max-width: 520px;
+  margin: auto auto 0;
+  padding: 1.25rem 0 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+}
+
+.cta-footer .footer-brand,
+.cta-footer .footer-copy,
+.cta-footer .footer-contact {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.78rem;
+}
+
+.cta-footer .footer-contact:hover {
+  color: #fff;
+}
+
+/* Footer (legacy fallback) */
 .site-footer {
   padding: 1.25rem 0 1.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -712,15 +890,29 @@ body {
 /* Responsive */
 @media (max-width: 991.98px) {
   .page-screen {
-    padding: 4.75rem 0 2rem;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 0;
+  }
+
+  .hero-shell {
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 5rem 0 1.5rem;
+    justify-content: space-between;
   }
 
   .hero-copy {
     text-align: left;
   }
 
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
   .hero-lead {
     max-width: none;
+    font-size: 0.95rem;
   }
 
   .hero-demo-col {
@@ -740,6 +932,11 @@ body {
 
   .hero-trust {
     margin-top: 0.85rem;
+  }
+
+  .section.page-screen > .container {
+    padding-top: 4.75rem;
+    padding-bottom: 2rem;
   }
 
   .section-header {
@@ -811,6 +1008,50 @@ body {
 @media (min-width: 992px) {
   .page-screen {
     padding: 6rem 0 3rem;
+  }
+
+  .hero-shell {
+    display: block;
+    min-height: auto;
+  }
+
+  .cta-section.page-screen-end {
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  .cta-shell {
+    min-height: auto;
+    padding: 0 1rem;
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    color: #fff;
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    max-width: 640px;
+    box-shadow: 0 20px 50px rgba(30, 126, 52, 0.22);
+  }
+
+  .cta-mark {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .cta-footer {
+    max-width: none;
+    margin-top: 2rem;
+    border-top-color: rgba(0, 0, 0, 0.06);
+  }
+
+  .cta-footer .footer-brand,
+  .cta-footer .footer-copy,
+  .cta-footer .footer-contact {
+    color: var(--text-muted);
+  }
+
+  .cta-footer .footer-contact:hover {
+    color: var(--accent);
   }
 
   .hero-trust {
@@ -893,12 +1134,12 @@ body {
 }
 
 @media (max-width: 575.98px) {
-  .page-screen {
+  .hero-shell {
     padding-top: 4.5rem;
   }
 
   .hero-title {
-    font-size: 1.85rem;
+    font-size: 2rem;
   }
 
   .hero-lead {
@@ -915,6 +1156,19 @@ body {
     width: 100%;
   }
 
+  .hero-preview-photo {
+    height: 132px;
+  }
+
+  .cta-shell {
+    padding-top: 5rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .cta-card h2 {
+    font-size: 1.85rem;
+  }
+
   .nutrient-row {
     grid-template-columns: 50px minmax(0, 1fr) auto;
     gap: 0.35rem;
@@ -926,10 +1180,5 @@ body {
 
   .nutrient-nums {
     font-size: 0.64rem;
-  }
-
-  .cta-card {
-    padding: 1.75rem 1rem;
-    border-radius: 14px;
   }
 }
