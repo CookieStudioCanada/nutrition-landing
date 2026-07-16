@@ -85,7 +85,8 @@ body {
 #mainNav .container,
 .page-screen > .container,
 .hero-shell.container,
-.cta-shell {
+.cta-shell,
+.legal-page > .container {
   padding-left: var(--page-gutter);
   padding-right: var(--page-gutter);
 }
