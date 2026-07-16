@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Nutrition — AI-powered meal logging, smart goals, and a personal coach. Track 8 nutrients. Your data stays on your device.">
   <title>Nutrition — Log smarter. Hit your targets.</title>
+  <!-- Bootstrap 5.3.3 (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -36,24 +37,32 @@
 
   <!-- Hero -->
   <header class="hero page-screen" id="top">
-    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-bg" aria-hidden="true">
+      <span class="hero-orb hero-orb-1"></span>
+      <span class="hero-orb hero-orb-2"></span>
+    </div>
     <div class="container hero-shell">
-      <div class="row align-items-center g-4 g-lg-5">
+      <div class="row align-items-center g-4 g-xl-5">
         <div class="col-lg-5 hero-copy">
-          <p class="hero-badge">AI · iOS · On-device</p>
+          <p class="hero-badge"><i class="bi bi-stars" aria-hidden="true"></i> AI · iOS · On-device</p>
           <h1 class="hero-title">
             <span class="hero-title-line">Snap a meal.</span>
             <span class="hero-title-line">See every <em>macro</em>.</span>
           </h1>
-          <p class="hero-lead">Photo, text, or chat — full nutrition in seconds.</p>
+          <p class="hero-lead">Photo, text, or chat — get calories, protein, carbs, and five more nutrients in seconds. No database hunting.</p>
+          <ul class="hero-highlights list-unstyled mb-0" aria-label="Key features">
+            <li><i class="bi bi-bar-chart-fill" aria-hidden="true"></i> 8 nutrients</li>
+            <li><i class="bi bi-camera-fill" aria-hidden="true"></i> AI logging</li>
+            <li><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> Stays on iPhone</li>
+          </ul>
           <div class="hero-actions">
             <a class="btn btn-success btn-hero-primary" href="#download">Coming to App Store</a>
-            <a class="btn btn-outline-secondary btn-hero-secondary" href="#features">Features</a>
+            <a class="btn btn-outline-secondary btn-hero-secondary" href="#features">See features</a>
           </div>
-          <ul class="hero-trust list-unstyled mb-0 d-none d-lg-flex">
-            <li><i class="bi bi-camera-fill"></i> Photo logging</li>
-            <li><i class="bi bi-shield-lock-fill"></i> On your iPhone</li>
-            <li><i class="bi bi-chat-heart-fill"></i> Personal coach</li>
+          <ul class="hero-trust list-unstyled mb-0">
+            <li><i class="bi bi-camera-fill" aria-hidden="true"></i> Photo logging</li>
+            <li><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> On your iPhone</li>
+            <li><i class="bi bi-chat-heart-fill" aria-hidden="true"></i> Personal coach</li>
           </ul>
         </div>
         <div class="col-lg-7 hero-demo-col">
@@ -338,6 +347,7 @@
     </div>
   </section>
 
+  <!-- Bootstrap 5.3.3 (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
 </body>
