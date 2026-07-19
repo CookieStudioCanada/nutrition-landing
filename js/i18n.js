@@ -2,6 +2,8 @@
   "use strict";
 
   var STORAGE_KEY = "nutrition-lang";
+  var SITE_ORIGIN = window.location.origin;
+  var SITE_PATH = window.location.pathname.replace(/\/[^/]*$/, "/") || "/";
 
   var translations = {
     en: {
@@ -12,13 +14,14 @@
       "nav.nutrients": "Nutrients",
       "nav.help": "Help",
       "nav.privacy": "Privacy",
+      "nav.terms": "Terms",
       "nav.getApp": "Get the app",
       "lang.toggle": "Language",
       "hero.title1": "Picture your plate.",
       "hero.title2a": "Track every ",
       "hero.title2b": ".",
       "hero.lead":
-        "Photo, text, or chat — get calories, protein, carbs, and five more nutrients in seconds. No database hunting.",
+        "Photo, text, or conversation — get calories, protein, carbs, and five more nutrients in seconds. No database hunting.",
       "hero.highlight1": "8 nutrients",
       "hero.highlight2": "AI logging",
       "hero.highlight3": "Stays on iPhone",
@@ -79,8 +82,12 @@
         "Download a CSV of your data from Settings whenever you want.",
       "cta.title": "Ready to eat with clarity?",
       "cta.lead": "Coming soon to the App Store",
-      "cta.button": "App Store — Coming soon",
-      "cta.aria": "Download on the App Store — coming soon",
+      "cta.badgeAlt": "Download on the App Store — coming soon",
+      "waitlist.label": "Get notified at launch",
+      "waitlist.placeholder": "you@example.com",
+      "waitlist.button": "Notify me",
+      "waitlist.success": "Thanks — you're on the list.",
+      "waitlist.error": "Something went wrong. Please try again.",
       "footer.privacy": "Privacy",
       "footer.terms": "Terms",
       "footer.help": "Help",
@@ -89,18 +96,19 @@
     fr: {
       "meta.description":
         "Nutrition — journal alimentaire avec IA, objectifs intelligents et coach personnel. Suivez 8 nutriments. Vos données restent sur votre appareil.",
-      "meta.title": "Nutrition — Journalisez mieux. Atteignez vos objectifs.",
+      "meta.title": "Nutrition — Consignez mieux. Atteignez vos objectifs.",
       "nav.features": "Fonctionnalités",
       "nav.nutrients": "Nutriments",
       "nav.help": "Aide",
       "nav.privacy": "Confidentialité",
+      "nav.terms": "Conditions",
       "nav.getApp": "Obtenir l'app",
       "lang.toggle": "Langue",
       "hero.title1": "Photographiez votre assiette.",
       "hero.title2a": "Suivez chaque ",
       "hero.title2b": ".",
       "hero.lead":
-        "Photo, texte ou clavardage — obtenez calories, protéines, glucides et cinq autres nutriments en quelques secondes. Sans chercher dans une base de données.",
+        "Photo, texte ou conversation — obtenez calories, protéines, glucides et cinq autres nutriments en quelques secondes. Sans chercher dans une base de données.",
       "hero.highlight1": "8 nutriments",
       "hero.highlight2": "Journal IA",
       "hero.highlight3": "Reste sur iPhone",
@@ -125,10 +133,10 @@
         "Calories, protéines, glucides, lipides, fibres, sucres, gras saturés et sodium — progrès en un coup d'œil.",
       "feature3.title": "Coach personnel",
       "feature3.desc":
-        "Un clavardage qui connaît vos objectifs, journaux et habitudes. Joignez photos ou PDF pour le contexte.",
+        "Une conversation qui connaît vos objectifs, journaux et habitudes. Joignez photos ou PDF pour le contexte.",
       "feature4.title": "Recettes et repas rapides",
       "feature4.desc":
-        "Enregistrez vos repas favoris une fois. Journalisez-les instantanément depuis l'accueil avec une simple commande.",
+        "Enregistrez vos repas favoris une fois. Consignez-les instantanément depuis l'accueil avec une simple commande.",
       "feature5.title": "Objectifs intelligents",
       "feature5.desc":
         "Cibles adaptées à votre corps, activité et objectif — perte de gras, maintien, prise de muscle ou meilleures habitudes.",
@@ -161,8 +169,12 @@
         "Téléchargez un CSV de vos données depuis Réglages quand vous le souhaitez.",
       "cta.title": "Prêt à manger en toute clarté?",
       "cta.lead": "Bientôt sur l'App Store",
-      "cta.button": "App Store — Bientôt disponible",
-      "cta.aria": "Télécharger sur l'App Store — bientôt disponible",
+      "cta.badgeAlt": "Télécharger dans l'App Store — bientôt disponible",
+      "waitlist.label": "Recevoir un avis au lancement",
+      "waitlist.placeholder": "vous@exemple.com",
+      "waitlist.button": "M'aviser",
+      "waitlist.success": "Merci — vous êtes inscrit.",
+      "waitlist.error": "Une erreur s'est produite. Veuillez réessayer.",
       "footer.privacy": "Confidentialité",
       "footer.terms": "Conditions",
       "footer.help": "Aide",
@@ -181,6 +193,19 @@
     return "en";
   }
 
+  function getLangFromUrl() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var lang = params.get("lang");
+      if (lang === "en" || lang === "fr") {
+        return lang;
+      }
+    } catch (e) {
+      /* ignore */
+    }
+    return null;
+  }
+
   function getStoredLang() {
     try {
       var stored = localStorage.getItem(STORAGE_KEY);
@@ -194,12 +219,121 @@
   }
 
   function getPreferredLang() {
-    return getStoredLang() || detectBrowserLang();
+    return getLangFromUrl() || getStoredLang() || detectBrowserLang();
   }
 
   function t(lang, key) {
     var table = translations[lang] || translations.en;
     return table[key] || translations.en[key] || key;
+  }
+
+  function localizeHref(href, lang) {
+    if (!href || href.indexOf("mailto:") === 0 || href.indexOf("http") === 0) {
+      return href;
+    }
+
+    var hashIndex = href.indexOf("#");
+    var hash = hashIndex >= 0 ? href.slice(hashIndex) : "";
+    var pathQuery = hashIndex >= 0 ? href.slice(0, hashIndex) : href;
+
+    if (lang === "fr") {
+      if (pathQuery.indexOf("lang=fr") >= 0) {
+        return pathQuery + hash;
+      }
+      pathQuery += pathQuery.indexOf("?") >= 0 ? "&lang=fr" : "?lang=fr";
+      return pathQuery + hash;
+    }
+
+    pathQuery = pathQuery
+      .replace(/([?&])lang=fr(&|$)/, function (_match, prefix, suffix) {
+        return suffix === "&" ? prefix : "";
+      })
+      .replace(/\?&/, "?")
+      .replace(/\?$/, "");
+
+    return pathQuery + hash;
+  }
+
+  function updateLocaleLinks(lang) {
+    document.querySelectorAll("[data-locale-link]").forEach(function (link) {
+      var base = link.getAttribute("data-locale-link") || link.getAttribute("href");
+      if (base) {
+        link.setAttribute("href", localizeHref(base, lang));
+      }
+    });
+  }
+
+  function updateUrlLang(lang) {
+    try {
+      var url = new URL(window.location.href);
+      if (lang === "fr") {
+        url.searchParams.set("lang", "fr");
+      } else {
+        url.searchParams.delete("lang");
+      }
+      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  function updateHreflangTags() {
+    var pagePath = window.location.pathname.split("/").pop() || "index.html";
+    if (pagePath === "") {
+      pagePath = "index.html";
+    }
+
+    var enLink = document.getElementById("hreflang-en");
+    var frLink = document.getElementById("hreflang-fr");
+    var defaultLink = document.getElementById("hreflang-default");
+
+    if (!enLink || !frLink) {
+      return;
+    }
+
+    var base = SITE_ORIGIN + SITE_PATH + (pagePath === "index.html" ? "" : pagePath);
+    enLink.setAttribute("href", base.replace(/\?$/, ""));
+    frLink.setAttribute("href", localizeHref(base, "fr"));
+    if (defaultLink) {
+      defaultLink.setAttribute("href", enLink.getAttribute("href"));
+    }
+  }
+
+  function applyLegalContent(lang) {
+    var page = document.body.getAttribute("data-legal-page");
+    if (!page || !window.LegalContent || !window.LegalContent[page]) {
+      return;
+    }
+
+    var content = window.LegalContent[page][lang] || window.LegalContent[page].en;
+    var h1 = document.getElementById("legal-h1");
+    var meta = document.getElementById("legal-meta");
+    var summary = document.getElementById("legal-summary");
+    var body = document.getElementById("legal-body");
+
+    document.title = content.metaTitle;
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", content.metaDescription);
+    }
+    if (h1) {
+      h1.textContent = content.h1;
+    }
+    if (meta) {
+      meta.textContent = content.meta;
+    }
+    if (summary) {
+      summary.innerHTML = content.summaryHtml;
+    }
+    if (body) {
+      body.innerHTML = localizeLegalHtml(content.bodyHtml, lang);
+    }
+  }
+
+  function localizeLegalHtml(html, lang) {
+    return html.replace(/href="([^"]+)"/g, function (_match, href) {
+      return 'href="' + localizeHref(href, lang) + '"';
+    });
   }
 
   function applyLang(lang) {
@@ -226,8 +360,20 @@
       el.textContent = t(lang, el.getAttribute("data-i18n"));
     });
 
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      el.innerHTML = t(lang, el.getAttribute("data-i18n-html"));
+    });
+
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
       el.setAttribute("aria-label", t(lang, el.getAttribute("data-i18n-aria")));
+    });
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      el.setAttribute("placeholder", t(lang, el.getAttribute("data-i18n-placeholder")));
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      el.setAttribute("alt", t(lang, el.getAttribute("data-i18n-alt")));
     });
 
     document.querySelectorAll(".lang-btn").forEach(function (btn) {
@@ -236,11 +382,47 @@
       btn.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
 
+    document.querySelectorAll(".app-store-badge-img").forEach(function (img) {
+      img.src = lang === "fr" ? "assets/app-store-badge-fr.svg" : "assets/app-store-badge-en.svg";
+    });
+
+    updateLocaleLinks(lang);
+    updateUrlLang(lang);
+    updateHreflangTags();
+    applyLegalContent(lang);
+
     try {
       localStorage.setItem(STORAGE_KEY, lang);
     } catch (e) {
       /* ignore */
     }
+
+    document.dispatchEvent(new CustomEvent("nutrition:langchange", { detail: { lang: lang } }));
+  }
+
+  function initLangToggleKeyboard() {
+    document.querySelectorAll(".lang-toggle").forEach(function (group) {
+      group.addEventListener("keydown", function (event) {
+        var buttons = group.querySelectorAll(".lang-btn");
+        var currentIndex = Array.prototype.findIndex.call(buttons, function (btn) {
+          return btn.classList.contains("active");
+        });
+
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+          event.preventDefault();
+          var next = buttons[(currentIndex + 1) % buttons.length];
+          next.focus();
+          applyLang(next.getAttribute("data-lang"));
+        }
+
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+          event.preventDefault();
+          var prev = buttons[(currentIndex - 1 + buttons.length) % buttons.length];
+          prev.focus();
+          applyLang(prev.getAttribute("data-lang"));
+        }
+      });
+    });
   }
 
   function initI18n() {
@@ -252,11 +434,15 @@
         applyLang(btn.getAttribute("data-lang"));
       });
     });
+
+    initLangToggleKeyboard();
   }
 
   window.NutritionI18n = {
     init: initI18n,
     apply: applyLang,
     getPreferredLang: getPreferredLang,
+    localizeHref: localizeHref,
+    t: t,
   };
 })();

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Help Center for the Nutrition iOS app — logging meals, goals, coach, export, and troubleshooting.">
   <title>Help Center — Nutrition</title>
-  <!-- Bootstrap 5.3.3 (CDN) -->
+  <link rel="alternate" hreflang="en-CA" href="help.html" id="hreflang-en">
+  <link rel="alternate" hreflang="fr-CA" href="help.html?lang=fr" id="hreflang-fr">
+  <link rel="alternate" hreflang="x-default" href="help.html" id="hreflang-default">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/legal.css">
 </head>
-<body>
+<body data-legal-page="help">
 
   <nav class="navbar navbar-expand-lg fixed-top scrolled" id="mainNav">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
+      <a class="navbar-brand fw-bold" href="index.html" data-locale-link="index.html">
         <span class="brand-icon">🍎</span> Nutrition
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,9 +25,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link active" href="help.html">Help</a></li>
-          <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></li>
-          <li class="nav-item"><a class="nav-link" href="terms.html">Terms</a></li>
+          <li class="nav-item"><a class="nav-link active" href="help.html" data-locale-link="help.html" data-i18n="nav.help">Help</a></li>
+          <li class="nav-item"><a class="nav-link" href="privacy.html" data-locale-link="privacy.html" data-i18n="nav.privacy">Privacy</a></li>
+          <li class="nav-item"><a class="nav-link" href="terms.html" data-locale-link="terms.html" data-i18n="nav.terms">Terms</a></li>
+          <li class="nav-item">
+            <div class="lang-toggle" role="group" data-i18n-aria="lang.toggle" aria-label="Language">
+              <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+              <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -34,107 +42,19 @@
   <main class="legal-page">
     <div class="container">
       <header class="legal-header">
-        <h1>Help Center</h1>
-        <p class="legal-meta">Nutrition for iOS · Requires iOS 18.5 or later</p>
-        <div class="legal-summary">
+        <h1 id="legal-h1">Help Center</h1>
+        <p class="legal-meta" id="legal-meta">Nutrition for iOS</p>
+        <div class="legal-summary" id="legal-summary">
           Quick answers for logging meals, tracking nutrients, using the coach, exporting your data, and fixing common issues. Nutrition stores your journal on your iPhone — not on our servers.
         </div>
       </header>
-
-      <article class="legal-body">
-        <div class="help-grid">
-          <section class="help-card">
-            <h2>Getting started</h2>
-            <p>After installing Nutrition, open the App and follow the setup prompts to enter basic profile details and choose a goal (fat loss, maintenance, muscle gain, or general habits). Your daily targets for calories and eight nutrients are calculated from that setup. You can adjust them later in Settings.</p>
-          </section>
-          <section class="help-card">
-            <h2>Log a meal</h2>
-            <p>Use <strong>Photo</strong> to snap or pick a meal image, <strong>Text</strong> to describe what you ate in plain language, or <strong>Coach</strong> to ask questions and log through conversation. Review AI results before saving — edit portions or nutrients if something looks off.</p>
-          </section>
-          <section class="help-card">
-            <h2>Track your day</h2>
-            <p>Home shows today’s progress with colour-coded bars for calories, protein, carbs, fat, fiber, sugar, saturated fat, and sodium. Green means you are on track; yellow and orange indicate you are approaching your limit.</p>
-          </section>
-          <section class="help-card">
-            <h2>Recipes &amp; quick items</h2>
-            <p>Save meals you eat often as recipes or quick items. Log them instantly from Home using a slash command instead of re-entering the same food every time.</p>
-          </section>
-        </div>
-
-        <h2>Frequently asked questions</h2>
-        <div class="help-faq">
-          <details>
-            <summary>Where is my data stored?</summary>
-            <p>Your meals, goals, recipes, weight history, and coach conversations are stored locally on your iPhone. We do not operate a cloud account for your journal. If you use Apple iCloud Backup, your device backup may include App data according to your Apple ID settings.</p>
-          </details>
-          <details>
-            <summary>When is my data sent to AI?</summary>
-            <p>Only when you use AI-powered features — such as photo analysis, text logging, or the coach. The content of that request (photo, text, or relevant context) is sent to Google’s Gemini API to generate a response. We do not send your full journal in the background.</p>
-          </details>
-          <details>
-            <summary>How accurate are AI nutrition estimates?</summary>
-            <p>AI estimates are best-effort and can be wrong, especially for mixed dishes, restaurant meals, and homemade recipes. Always review and adjust results. Nutrition is not a substitute for professional dietary advice or lab-tested nutrition labels.</p>
-          </details>
-          <details>
-            <summary>How do I export my data?</summary>
-            <p>Go to <strong>Settings → Export</strong> to download a CSV of your meals, goals, recipes, and weight history. Export regularly if you want a backup outside your device.</p>
-          </details>
-          <details>
-            <summary>How do I delete my data?</summary>
-            <p>Delete individual meals from History, or remove all App data by deleting the App from your iPhone. Deleting the App removes locally stored journal data from your device. If you need help with data under our control (such as a support email), contact us.</p>
-          </details>
-          <details>
-            <summary>Why does the camera not work?</summary>
-            <p>Photo logging requires camera or photo library permission. Open <strong>Settings → Nutrition</strong> on your iPhone and enable Camera and Photos access. If permission was previously denied, iOS may not show the prompt again until you change it in Settings.</p>
-          </details>
-          <details>
-            <summary>AI features are unavailable or slow</summary>
-            <p>AI features require an internet connection. Check Wi‑Fi or cellular data, then try again. If the problem persists, force-quit and reopen the App. Persistent failures may indicate a temporary service outage — contact support with the time and feature you used.</p>
-          </details>
-          <details>
-            <summary>Can I use Nutrition for medical conditions?</summary>
-            <p>Nutrition is a general tracking tool, not a medical device. Do not use it to manage diabetes, allergies, kidney disease, eating disorders, pregnancy, or other conditions without guidance from a qualified health professional. See our <a href="terms.html">Terms of Service</a> for the full medical disclaimer.</p>
-          </details>
-          <details>
-            <summary>Is there an Android or web version?</summary>
-            <p>Not at this time. Nutrition is currently available for iPhone running iOS 18.5 or later.</p>
-          </details>
-          <details>
-            <summary>How do I request a refund?</summary>
-            <p>If you purchased a subscription through the App Store, refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com" rel="noopener noreferrer">reportaproblem.apple.com</a> or your Apple ID purchase history. We cannot process App Store refunds directly.</p>
-          </details>
-        </div>
-
-        <h2>Permissions</h2>
-        <ul>
-          <li><strong>Camera</strong> — photograph meals for AI logging.</li>
-          <li><strong>Photos</strong> — select existing meal images from your library.</li>
-          <li><strong>Network</strong> — required for AI analysis and coaching.</li>
-        </ul>
-
-        <h2>Legal &amp; privacy</h2>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a> — how we handle personal information under Canadian and Quebec law.</li>
-          <li><a href="terms.html">Terms of Service</a> — rules for using the App, disclaimers, and liability.</li>
-        </ul>
-
-        <div class="help-contact">
-          <h2>Still need help?</h2>
-          <p>Email us at <a href="mailto:cookietechnologiescanada@gmail.com">cookietechnologiescanada@gmail.com</a>. Include your iOS version, App version (Settings → About), and a short description of the issue. We aim to respond within 2 business days.</p>
-        </div>
-
-        <nav class="legal-nav" aria-label="Legal pages">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-          <a class="is-current" href="help.html">Help Center</a>
-          <a href="index.html">Back to home</a>
-        </nav>
-      </article>
+      <article class="legal-body" id="legal-body"></article>
     </div>
   </main>
 
-  <!-- Bootstrap 5.3.3 (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/legal-content.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Terms of Service for the Nutrition iOS app by Cookie Technologies Canada.">
   <title>Terms of Service — Nutrition</title>
-  <!-- Bootstrap 5.3.3 (CDN) -->
+  <link rel="alternate" hreflang="en-CA" href="terms.html" id="hreflang-en">
+  <link rel="alternate" hreflang="fr-CA" href="terms.html?lang=fr" id="hreflang-fr">
+  <link rel="alternate" hreflang="x-default" href="terms.html" id="hreflang-default">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/legal.css">
 </head>
-<body>
+<body data-legal-page="terms">
 
   <nav class="navbar navbar-expand-lg fixed-top scrolled" id="mainNav">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
+      <a class="navbar-brand fw-bold" href="index.html" data-locale-link="index.html">
         <span class="brand-icon">🍎</span> Nutrition
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,9 +25,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
-          <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></li>
-          <li class="nav-item"><a class="nav-link active" href="terms.html">Terms</a></li>
+          <li class="nav-item"><a class="nav-link" href="help.html" data-locale-link="help.html" data-i18n="nav.help">Help</a></li>
+          <li class="nav-item"><a class="nav-link" href="privacy.html" data-locale-link="privacy.html" data-i18n="nav.privacy">Privacy</a></li>
+          <li class="nav-item"><a class="nav-link active" href="terms.html" data-locale-link="terms.html" data-i18n="nav.terms">Terms</a></li>
+          <li class="nav-item">
+            <div class="lang-toggle" role="group" data-i18n-aria="lang.toggle" aria-label="Language">
+              <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+              <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -34,126 +42,19 @@
   <main class="legal-page">
     <div class="container">
       <header class="legal-header">
-        <h1>Terms of Service</h1>
-        <p class="legal-meta">Effective date: July 15, 2026 · Last updated: July 15, 2026</p>
-        <div class="legal-summary">
+        <h1 id="legal-h1">Terms of Service</h1>
+        <p class="legal-meta" id="legal-meta">Effective date: July 15, 2026 · Last updated: July 15, 2026</p>
+        <div class="legal-summary" id="legal-summary">
           <strong>In short:</strong> Nutrition helps you log meals and track nutrients using AI-assisted tools. It is not medical advice. Your journal stays on your device. By using the App, you agree to these Terms and our Privacy Policy.
         </div>
       </header>
-
-      <article class="legal-body">
-        <h2>1. Agreement</h2>
-        <p>These Terms of Service (“Terms”) are a binding agreement between you and <strong>Cookie Technologies Canada</strong> (“we,” “us,” or “our”) governing your use of the <strong>Nutrition</strong> mobile application for iOS (the “App”) and related services. By downloading, installing, accessing, or using the App, you agree to these Terms and our <a href="privacy.html">Privacy Policy</a>.</p>
-        <p>If you do not agree, do not use the App. If you are using the App on behalf of an organization, you represent that you have authority to bind that organization.</p>
-
-        <h2>2. Eligibility</h2>
-        <p>You must be at least 13 years old to use the App, or the age of digital consent in your province or territory if higher. If you are under the age of majority where you live, you may use the App only with the involvement and consent of a parent or legal guardian.</p>
-        <p>The App is offered in Canada and may not be available in all regions. You are responsible for compliance with local laws.</p>
-
-        <h2>3. The service</h2>
-        <p>Nutrition is a personal nutrition journal that lets you log meals by photo, text, or chat; track calories and macronutrients; set goals; save recipes; review history; export data; and interact with an AI-powered coach. Features may change over time as we improve the App.</p>
-        <p>We grant you a personal, limited, non-exclusive, non-transferable, revocable licence to use the App for your own non-commercial purposes, subject to these Terms and Apple’s App Store rules.</p>
-
-        <h2>4. Not medical or professional advice</h2>
-        <p><strong>Nutrition is not a medical device and does not provide medical, dietary, or health advice.</strong> Content in the App — including AI-generated estimates, coach responses, and nutrient targets — is for general informational and educational purposes only.</p>
-        <p>Always consult a qualified physician, registered dietitian, or other licensed health professional before making decisions about diet, exercise, weight management, allergies, medical conditions, pregnancy, or medication interactions. Never disregard professional advice because of something you read or log in the App.</p>
-        <p>If you think you may have a medical emergency, call emergency services immediately.</p>
-
-        <h2>5. AI features and accuracy</h2>
-        <p>AI-powered features use automated systems, including third-party models, to estimate foods and nutrients or generate coaching responses. AI output may be incomplete, inaccurate, or inappropriate. You are responsible for reviewing results before logging or acting on them.</p>
-        <p>We do not guarantee the accuracy of calorie counts, macro estimates, portion sizes, ingredient identification, or coaching suggestions. The App is a convenience tool, not a certified nutrition analysis system.</p>
-
-        <h2>6. Your content and responsibilities</h2>
-        <p>You retain ownership of content you create in the App, such as meal logs, photos, notes, and recipes. You grant us a limited licence to process that content solely to provide the App and AI features you request.</p>
-        <p>You agree to:</p>
-        <ul>
-          <li>provide accurate information to the best of your ability;</li>
-          <li>use the App only for lawful personal purposes;</li>
-          <li>secure your device and backups;</li>
-          <li>not upload content you do not have the right to share;</li>
-          <li>not rely on the App as your sole source of nutrition or health information.</li>
-        </ul>
-
-        <h2>7. Acceptable use</h2>
-        <p>You must not:</p>
-        <ul>
-          <li>reverse engineer, decompile, or attempt to extract source code except where permitted by law;</li>
-          <li>interfere with the App’s security or operation;</li>
-          <li>use the App to develop competing products through unauthorized scraping or automation;</li>
-          <li>submit unlawful, harmful, abusive, or infringing content;</li>
-          <li>misrepresent AI-generated content as professional medical advice;</li>
-          <li>use the App in any manner that violates applicable law or third-party rights.</li>
-        </ul>
-        <p>We may suspend or terminate access if we reasonably believe you have violated these Terms.</p>
-
-        <h2>8. Subscriptions and purchases</h2>
-        <p>If the App offers paid features or subscriptions in the future, purchases will be processed by Apple through your Apple ID. Pricing, billing cycles, free trials, and refunds are governed by Apple’s payment terms and applicable App Store policies. We do not store your payment card information.</p>
-        <p>You can manage or cancel subscriptions in your Apple ID account settings.</p>
-
-        <h2>9. Privacy</h2>
-        <p>Our collection and use of personal information is described in our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms. By using the App, you acknowledge that information you submit to AI features may be processed by service providers as described in the Privacy Policy.</p>
-
-        <h2>10. Intellectual property</h2>
-        <p>The App, Site, trademarks, logos, design, and underlying software are owned by Cookie Technologies Canada or our licensors and are protected by intellectual property laws. Except for the limited licence granted above, no rights are transferred to you.</p>
-        <p>Feedback you provide may be used by us without obligation to compensate you, to improve the App and related services.</p>
-
-        <h2>11. Third-party services</h2>
-        <p>The App integrates with third-party services, including Apple and Google Gemini. Your use of those services may be subject to separate terms and privacy policies. We are not responsible for third-party services outside our reasonable control.</p>
-
-        <h2>12. Disclaimers</h2>
-        <p>To the fullest extent permitted by applicable law, the App and Site are provided on an <strong>“as is”</strong> and <strong>“as available”</strong> basis without warranties of any kind, whether express, implied, or statutory, including implied warranties of merchantability, fitness for a particular purpose, accuracy, and non-infringement.</p>
-        <p>We do not warrant that the App will be uninterrupted, error-free, secure, or free of harmful components, or that data will never be lost. You are responsible for maintaining backups through export or device backup tools.</p>
-        <p>Some jurisdictions, including Quebec, do not allow certain warranty exclusions. In those jurisdictions, our disclaimers apply to the maximum extent permitted by law.</p>
-
-        <h2>13. Limitation of liability</h2>
-        <p>To the fullest extent permitted by applicable law, Cookie Technologies Canada and its directors, officers, employees, contractors, and affiliates will not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss of profits, data, goodwill, or health outcomes, arising from or related to your use of the App or Site, even if we have been advised of the possibility of such damages.</p>
-        <p>Our total aggregate liability for any claim arising out of or relating to the App or these Terms will not exceed the greater of (a) CAD $100 or (b) the amount you paid us for the App in the twelve (12) months before the event giving rise to the claim.</p>
-        <p>Nothing in these Terms limits liability that cannot be limited under applicable law, including liability for fraud or gross negligence where prohibited.</p>
-
-        <h2>14. Indemnity</h2>
-        <p>You agree to defend, indemnify, and hold harmless Cookie Technologies Canada from claims, damages, losses, and expenses (including reasonable legal fees) arising from your misuse of the App, your content, or your violation of these Terms or applicable law, except to the extent caused by our own breach or negligence.</p>
-
-        <h2>15. Termination</h2>
-        <p>You may stop using the App at any time by deleting it from your device. We may suspend or terminate your access if you materially breach these Terms or if we discontinue the App.</p>
-        <p>Sections that by their nature should survive termination — including disclaimers, limitation of liability, indemnity, and governing law — will survive.</p>
-
-        <h2>16. Apple App Store terms</h2>
-        <p>If you downloaded the App from Apple’s App Store, you acknowledge that:</p>
-        <ul>
-          <li>these Terms are between you and Cookie Technologies Canada, not Apple;</li>
-          <li>Apple has no obligation to furnish maintenance or support for the App;</li>
-          <li>Apple is not responsible for product claims, legal claims, or third-party intellectual property claims relating to the App;</li>
-          <li>Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</li>
-        </ul>
-        <p>Apple’s Licensed Application End User Licence Agreement also applies where required.</p>
-
-        <h2>17. Governing law and disputes</h2>
-        <p>These Terms are governed by the laws of the Province of Quebec and the federal laws of Canada applicable therein, without regard to conflict-of-law rules.</p>
-        <p>Before commencing formal proceedings, you agree to contact us at <a href="mailto:cookietechnologiescanada@gmail.com">cookietechnologiescanada@gmail.com</a> and attempt to resolve the dispute informally within thirty (30) days.</p>
-        <p>Subject to applicable consumer protection laws, you agree that courts located in Quebec, Canada will have exclusive jurisdiction over disputes that cannot be resolved informally. Nothing prevents you from exercising mandatory rights under consumer protection legislation in your province or territory.</p>
-
-        <h2>18. Consumer protection</h2>
-        <p>If you are a consumer in Quebec or elsewhere in Canada, you may have statutory rights that cannot be waived by contract. Where any provision of these Terms conflicts with mandatory consumer protection law, that law prevails to the extent of the conflict.</p>
-
-        <h2>19. Changes</h2>
-        <p>We may modify these Terms from time to time. We will post the updated version on this page and update the effective date. Material changes may also be communicated in the App where practicable. Continued use after the effective date constitutes acceptance, except where further consent is required by law.</p>
-
-        <h2>20. Contact</h2>
-        <p>Cookie Technologies Canada<br>
-        Email: <a href="mailto:cookietechnologiescanada@gmail.com">cookietechnologiescanada@gmail.com</a></p>
-
-        <nav class="legal-nav" aria-label="Legal pages">
-          <a href="privacy.html">Privacy Policy</a>
-          <a class="is-current" href="terms.html">Terms of Service</a>
-          <a href="help.html">Help Center</a>
-          <a href="index.html">Back to home</a>
-        </nav>
-      </article>
+      <article class="legal-body" id="legal-body"></article>
     </div>
   </main>
 
-  <!-- Bootstrap 5.3.3 (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/legal-content.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
