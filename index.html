@@ -31,7 +31,8 @@
           <li class="nav-item"><a class="nav-link" href="help.html" data-locale-link="help.html" data-i18n="nav.help">Help</a></li>
           <li class="nav-item"><a class="nav-link" href="#privacy" data-i18n="nav.privacy">Privacy</a></li>
           <li class="nav-item">
-            <div class="lang-toggle" role="group" data-i18n-aria="lang.toggle" aria-label="Language">
+            <div class="lang-toggle" role="group" data-i18n-aria="lang.toggle" data-active-lang="en" aria-label="Language">
+              <span class="lang-toggle-thumb" aria-hidden="true"></span>
               <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
               <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
             </div>
@@ -54,7 +55,7 @@
       <div class="row align-items-center g-4 g-xl-5">
         <div class="col-lg-6 hero-copy">
           <h1 class="hero-title">
-            <span class="hero-title-line" data-i18n="hero.title1">Picture your plate.</span>
+            <span class="hero-title-line" data-i18n="hero.title1">Snap a meal.</span>
             <span class="hero-title-line"><span data-i18n="hero.title2a">Track every </span><em>macro</em><span data-i18n="hero.title2b">.</span></span>
           </h1>
           <p class="hero-lead" data-i18n="hero.lead">Photo, text, or chat — get calories, protein, carbs, and five more nutrients in seconds. No database hunting.</p>
@@ -238,27 +239,34 @@
         </div>
         <div class="col-lg-6">
           <h2 data-i18n="privacy.title">Private by design</h2>
-          <p class="text-secondary lead-sm" data-i18n="privacy.lead">Your journal stays on your iPhone — not our servers.</p>
+          <p class="text-secondary lead-sm" data-i18n="privacy.lead">Your nutrition journal stays on your iPhone — not our servers. Built for privacy under Canadian law.</p>
           <ul class="privacy-list">
             <li>
               <i class="bi bi-phone-fill privacy-list-icon text-success"></i>
               <div>
-                <strong data-i18n="privacy.item1.title">On-device storage</strong>
-                <span data-i18n="privacy.item1.desc">Your nutrition journal lives on your phone, under your control.</span>
+                <strong data-i18n="privacy.item1.title">On-device journal</strong>
+                <span data-i18n="privacy.item1.desc">Meals, goals, recipes, and weight history stay on your iPhone via Apple's local storage. No account required — we never receive your journal on our servers.</span>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-eye-slash-fill privacy-list-icon text-secondary"></i>
+              <div>
+                <strong data-i18n="privacy.item2.title">No ads, no data sales</strong>
+                <span data-i18n="privacy.item2.desc">Nutrition doesn't sell your information or use it for advertising. This site uses no tracking cookies or analytics scripts.</span>
               </div>
             </li>
             <li>
               <i class="bi bi-stars privacy-list-icon text-primary"></i>
               <div>
-                <strong data-i18n="privacy.item2.title">AI when you need it</strong>
-                <span data-i18n="privacy.item2.desc">Meal analysis and coaching use Google's Gemini API only when you trigger them.</span>
+                <strong data-i18n="privacy.item3.title">AI only when you ask</strong>
+                <span data-i18n="privacy.item3.desc">Photo analysis and coaching send content to Google Gemini only when you tap those features. Nothing runs in the background.</span>
               </div>
             </li>
             <li>
               <i class="bi bi-download privacy-list-icon text-info"></i>
               <div>
-                <strong data-i18n="privacy.item3.title">Export anytime</strong>
-                <span data-i18n="privacy.item3.desc">Download a CSV of your data from Settings whenever you want.</span>
+                <strong data-i18n="privacy.item4.title">You control your data</strong>
+                <span data-i18n="privacy.item4.desc">Export everything as CSV from Settings, or delete all app data by removing the app from your device.</span>
               </div>
             </li>
           </ul>

@@ -17,7 +17,7 @@
       "nav.terms": "Terms",
       "nav.getApp": "Get the app",
       "lang.toggle": "Language",
-      "hero.title1": "Picture your plate.",
+      "hero.title1": "Snap a meal.",
       "hero.title2a": "Track every ",
       "hero.title2b": ".",
       "hero.lead":
@@ -70,16 +70,19 @@
       "nutrients.sodium": "Sodium",
       "privacy.tagline": "Your journal stays yours",
       "privacy.title": "Private by design",
-      "privacy.lead": "Your journal stays on your iPhone — not our servers.",
-      "privacy.item1.title": "On-device storage",
+      "privacy.lead": "Your nutrition journal stays on your iPhone — not our servers. Built for privacy under Canadian law.",
+      "privacy.item1.title": "On-device journal",
       "privacy.item1.desc":
-        "Your nutrition journal lives on your phone, under your control.",
-      "privacy.item2.title": "AI when you need it",
+        "Meals, goals, recipes, and weight history stay on your iPhone via Apple's local storage. No account required — we never receive your journal on our servers.",
+      "privacy.item2.title": "No ads, no data sales",
       "privacy.item2.desc":
-        "Meal analysis and coaching use Google's Gemini API only when you trigger them.",
-      "privacy.item3.title": "Export anytime",
+        "Nutrition doesn't sell your information or use it for advertising. This site uses no tracking cookies or analytics scripts.",
+      "privacy.item3.title": "AI only when you ask",
       "privacy.item3.desc":
-        "Download a CSV of your data from Settings whenever you want.",
+        "Photo analysis and coaching send content to Google Gemini only when you tap those features. Nothing runs in the background.",
+      "privacy.item4.title": "You control your data",
+      "privacy.item4.desc":
+        "Export everything as CSV from Settings, or delete all app data by removing the app from your device.",
       "cta.title": "Ready to eat with clarity?",
       "cta.lead": "Coming soon to the App Store",
       "cta.badgeAlt": "Download on the App Store — coming soon",
@@ -104,7 +107,7 @@
       "nav.terms": "Conditions",
       "nav.getApp": "Obtenir l'app",
       "lang.toggle": "Langue",
-      "hero.title1": "Photographiez votre assiette.",
+      "hero.title1": "Capturez un repas.",
       "hero.title2a": "Suivez chaque ",
       "hero.title2b": ".",
       "hero.lead":
@@ -157,16 +160,19 @@
       "nutrients.sodium": "Sodium",
       "privacy.tagline": "Votre journal vous appartient",
       "privacy.title": "Confidentialité intégrée",
-      "privacy.lead": "Votre journal reste sur votre iPhone — pas sur nos serveurs.",
-      "privacy.item1.title": "Stockage sur l'appareil",
+      "privacy.lead": "Votre journal nutritionnel reste sur votre iPhone — pas sur nos serveurs. Conçu pour la confidentialité, conformément aux lois canadiennes.",
+      "privacy.item1.title": "Journal sur l'appareil",
       "privacy.item1.desc":
-        "Votre journal nutritionnel vit sur votre téléphone, sous votre contrôle.",
-      "privacy.item2.title": "IA quand vous en avez besoin",
+        "Repas, objectifs, recettes et historique de poids restent sur votre iPhone via le stockage local d'Apple. Aucun compte requis — nous ne recevons jamais votre journal sur nos serveurs.",
+      "privacy.item2.title": "Pas de pub, pas de vente de données",
       "privacy.item2.desc":
-        "L'analyse des repas et le coaching utilisent l'API Gemini de Google seulement lorsque vous les déclenchez.",
-      "privacy.item3.title": "Export à tout moment",
+        "Nutrition ne vend pas vos renseignements et ne les utilise pas à des fins publicitaires. Ce site n'utilise aucun témoin de suivi ni script d'analyse.",
+      "privacy.item3.title": "IA seulement sur demande",
       "privacy.item3.desc":
-        "Téléchargez un CSV de vos données depuis Réglages quand vous le souhaitez.",
+        "L'analyse photo et le coaching envoient du contenu à Google Gemini seulement lorsque vous utilisez ces fonctions. Rien ne s'exécute en arrière-plan.",
+      "privacy.item4.title": "Vous contrôlez vos données",
+      "privacy.item4.desc":
+        "Exportez tout en CSV depuis Réglages, ou supprimez toutes les données en retirant l'app de votre appareil.",
       "cta.title": "Prêt à manger en toute clarté?",
       "cta.lead": "Bientôt sur l'App Store",
       "cta.badgeAlt": "Télécharger dans l'App Store — bientôt disponible",
@@ -380,6 +386,10 @@
       var isActive = btn.getAttribute("data-lang") === lang;
       btn.classList.toggle("active", isActive);
       btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    document.querySelectorAll(".lang-toggle").forEach(function (group) {
+      group.setAttribute("data-active-lang", lang);
     });
 
     document.querySelectorAll(".app-store-badge-img").forEach(function (img) {

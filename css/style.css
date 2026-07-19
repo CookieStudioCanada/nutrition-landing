@@ -74,37 +74,63 @@ body {
 }
 
 .lang-toggle {
-  display: inline-flex;
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 0;
-  padding: 0.2rem;
+  width: 5.35rem;
+  padding: 0.18rem;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #e8eaed;
+  border: 1px solid rgba(0, 0, 0, 0.04);
   margin: 0.5rem 0;
+  isolation: isolate;
+}
+
+.lang-toggle-thumb {
+  position: absolute;
+  top: 0.18rem;
+  left: 0.18rem;
+  width: calc(50% - 0.18rem);
+  height: calc(100% - 0.36rem);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lang-toggle[data-active-lang="fr"] .lang-toggle-thumb {
+  transform: translateX(calc(100% + 0.18rem));
 }
 
 .lang-btn {
+  position: relative;
+  z-index: 1;
   border: 0;
   background: transparent;
-  color: var(--text-muted);
-  font-size: 0.72rem;
+  color: #8b939c;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 0.28rem 0.55rem;
+  letter-spacing: 0.06em;
+  padding: 0.34rem 0.45rem;
   border-radius: 999px;
   line-height: 1.2;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .lang-btn:hover {
-  color: var(--text);
+  color: #5f6670;
 }
 
 .lang-btn.active {
-  background: #fff;
   color: var(--accent-dark);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 @media (min-width: 992px) {
@@ -1108,15 +1134,16 @@ body {
   }
 
   .hero.page-screen {
-    min-height: 100svh;
-    min-height: 100dvh;
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
   }
 
   .hero-shell {
     display: block;
     min-height: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
   }
 
   .hero-copy {
