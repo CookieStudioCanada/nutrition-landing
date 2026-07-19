@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nutrition — AI-powered meal logging, smart goals, and a personal coach. Track 8 nutrients. Your data stays on your device.">
-  <title>Nutrition — Log smarter. Hit your targets.</title>
+  <meta name="description" data-i18n="meta.description" content="Nutrition — AI-powered meal logging, smart goals, and a personal coach. Track 8 nutrients. Your data stays on your device.">
+  <title data-i18n="meta.title">Nutrition — Log smarter. Hit your targets.</title>
   <!-- Bootstrap 5.3.3 (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -23,12 +23,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#nutrients">Nutrients</a></li>
-          <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
-          <li class="nav-item"><a class="nav-link" href="#privacy">Privacy</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features" data-i18n="nav.features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nutrients" data-i18n="nav.nutrients">Nutrients</a></li>
+          <li class="nav-item"><a class="nav-link" href="help.html" data-i18n="nav.help">Help</a></li>
+          <li class="nav-item"><a class="nav-link" href="#privacy" data-i18n="nav.privacy">Privacy</a></li>
           <li class="nav-item">
-            <a class="btn btn-success btn-sm px-3 ms-lg-2" href="#download">Get the app</a>
+            <div class="lang-toggle" role="group" data-i18n-aria="lang.toggle" aria-label="Language">
+              <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+              <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-success btn-sm px-3 ms-lg-2" href="#download" data-i18n="nav.getApp">Get the app</a>
           </li>
         </ul>
       </div>
@@ -43,33 +49,31 @@
     </div>
     <div class="container hero-shell">
       <div class="row align-items-center g-4 g-xl-5">
-        <div class="col-lg-5 hero-copy">
-          <p class="hero-badge"><i class="bi bi-stars" aria-hidden="true"></i> AI · iOS · On-device</p>
+        <div class="col-lg-6 hero-copy">
           <h1 class="hero-title">
-            <span class="hero-title-line">Snap a meal.</span>
-            <span class="hero-title-line">See every <em>macro</em>.</span>
+            <span class="hero-title-line" data-i18n="hero.title1">Picture your plate.</span>
+            <span class="hero-title-line"><span data-i18n="hero.title2a">Track every </span><em>macro</em><span data-i18n="hero.title2b">.</span></span>
           </h1>
-          <p class="hero-lead">Photo, text, or chat — get calories, protein, carbs, and five more nutrients in seconds. No database hunting.</p>
+          <p class="hero-lead" data-i18n="hero.lead">Photo, text, or chat — get calories, protein, carbs, and five more nutrients in seconds. No database hunting.</p>
           <ul class="hero-highlights list-unstyled mb-0" aria-label="Key features">
-            <li><i class="bi bi-bar-chart-fill" aria-hidden="true"></i> 8 nutrients</li>
-            <li><i class="bi bi-camera-fill" aria-hidden="true"></i> AI logging</li>
-            <li><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> Stays on iPhone</li>
+            <li><i class="bi bi-bar-chart-fill" aria-hidden="true"></i> <span data-i18n="hero.highlight1">8 nutrients</span></li>
+            <li><i class="bi bi-camera-fill" aria-hidden="true"></i> <span data-i18n="hero.highlight2">AI logging</span></li>
+            <li><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> <span data-i18n="hero.highlight3">Stays on iPhone</span></li>
           </ul>
           <div class="hero-actions">
-            <a class="btn btn-success btn-hero-primary" href="#download">Coming to App Store</a>
-            <a class="btn btn-outline-secondary btn-hero-secondary" href="#features">See features</a>
+            <a class="btn btn-success btn-hero-primary" href="#download" data-i18n="hero.cta1">Coming to App Store</a>
+            <a class="btn btn-outline-secondary btn-hero-secondary" href="#features" data-i18n="hero.cta2">See features</a>
           </div>
           <ul class="hero-trust list-unstyled mb-0">
-            <li><i class="bi bi-camera-fill" aria-hidden="true"></i> Photo logging</li>
-            <li><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> On your iPhone</li>
-            <li><i class="bi bi-chat-heart-fill" aria-hidden="true"></i> Personal coach</li>
+            <li><i class="bi bi-camera-fill" aria-hidden="true"></i> <span data-i18n="hero.trust1">Photo logging</span></li>
+            <li><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> <span data-i18n="hero.trust2">On your iPhone</span></li>
+            <li><i class="bi bi-chat-heart-fill" aria-hidden="true"></i> <span data-i18n="hero.trust3">Personal coach</span></li>
           </ul>
         </div>
-        <div class="col-lg-7 hero-demo-col">
-          <div class="hero-demo" aria-hidden="true">
-            <!-- Food photo card -->
-            <div class="demo-card demo-photo">
-              <div class="demo-photo-inner">
+        <div class="col-lg-6 hero-preview-col">
+          <div class="hero-mobile-preview" aria-hidden="true">
+            <div class="hero-preview-card">
+              <div class="hero-preview-photo">
                 <div class="demo-food-plate">
                   <span class="food-item food-salmon"></span>
                   <span class="food-item food-rice"></span>
@@ -80,81 +84,22 @@
                 <div class="demo-viewfinder">
                   <span></span><span></span><span></span><span></span>
                 </div>
+                <span class="hero-preview-chip"><i class="bi bi-stars"></i> <span data-i18n="hero.preview.chip">AI scan</span></span>
               </div>
-              <p class="demo-caption"><i class="bi bi-camera"></i> Salmon rice bowl</p>
-            </div>
-
-            <!-- Arrow connector -->
-            <div class="demo-connector">
-              <div class="demo-connector-line"></div>
-              <div class="demo-connector-badge">
-                <i class="bi bi-stars"></i> AI
-              </div>
-            </div>
-
-            <!-- Result card -->
-            <div class="demo-card demo-result">
-              <div class="demo-result-header">
-                <span class="demo-result-check"><i class="bi bi-check-lg"></i></span>
-                <div>
-                  <strong>Salmon rice bowl</strong>
-                  <span>520 kcal · logged</span>
+              <div class="hero-preview-body">
+                <div class="hero-preview-head">
+                  <span class="hero-preview-check"><i class="bi bi-check-lg"></i></span>
+                  <div>
+                    <strong data-i18n="hero.preview.meal">Salmon rice bowl</strong>
+                    <span data-i18n="hero.preview.logged">520 kcal · logged</span>
+                  </div>
+                </div>
+                <div class="hero-preview-macros">
+                  <div class="hero-preview-macro"><span data-i18n="hero.preview.protein">Protein</span><div class="macro-bar"><div class="macro-fill fill-green" style="width:72%"></div></div><span>38g</span></div>
+                  <div class="hero-preview-macro"><span data-i18n="hero.preview.carbs">Carbs</span><div class="macro-bar"><div class="macro-fill fill-yellow" style="width:58%"></div></div><span>52g</span></div>
+                  <div class="hero-preview-macro"><span data-i18n="hero.preview.fat">Fat</span><div class="macro-bar"><div class="macro-fill fill-orange" style="width:45%"></div></div><span>18g</span></div>
                 </div>
               </div>
-              <div class="demo-macros">
-                <div class="demo-macro">
-                  <span class="macro-label">Protein</span>
-                  <div class="macro-bar"><div class="macro-fill fill-green" style="width:72%"></div></div>
-                  <span class="macro-val">38g</span>
-                </div>
-                <div class="demo-macro">
-                  <span class="macro-label">Carbs</span>
-                  <div class="macro-bar"><div class="macro-fill fill-yellow" style="width:58%"></div></div>
-                  <span class="macro-val">52g</span>
-                </div>
-                <div class="demo-macro">
-                  <span class="macro-label">Fat</span>
-                  <div class="macro-bar"><div class="macro-fill fill-orange" style="width:45%"></div></div>
-                  <span class="macro-val">18g</span>
-                </div>
-                <div class="demo-macro">
-                  <span class="macro-label">Fiber</span>
-                  <div class="macro-bar"><div class="macro-fill fill-green" style="width:30%"></div></div>
-                  <span class="macro-val">6g</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-mobile-preview d-lg-none" aria-hidden="true">
-        <div class="hero-preview-card">
-          <div class="hero-preview-photo">
-            <div class="demo-food-plate">
-              <span class="food-item food-salmon"></span>
-              <span class="food-item food-rice"></span>
-              <span class="food-item food-greens"></span>
-              <span class="food-item food-avocado"></span>
-            </div>
-            <div class="demo-scan-line"></div>
-            <div class="demo-viewfinder">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <span class="hero-preview-chip"><i class="bi bi-stars"></i> AI scan</span>
-          </div>
-          <div class="hero-preview-body">
-            <div class="hero-preview-head">
-              <span class="hero-preview-check"><i class="bi bi-check-lg"></i></span>
-              <div>
-                <strong>Salmon rice bowl</strong>
-                <span>520 kcal · logged</span>
-              </div>
-            </div>
-            <div class="hero-preview-macros">
-              <div class="hero-preview-macro"><span>Protein</span><div class="macro-bar"><div class="macro-fill fill-green" style="width:72%"></div></div><span>38g</span></div>
-              <div class="hero-preview-macro"><span>Carbs</span><div class="macro-bar"><div class="macro-fill fill-yellow" style="width:58%"></div></div><span>52g</span></div>
-              <div class="hero-preview-macro"><span>Fat</span><div class="macro-bar"><div class="macro-fill fill-orange" style="width:45%"></div></div><span>18g</span></div>
             </div>
           </div>
         </div>
@@ -166,50 +111,50 @@
   <section class="section page-screen" id="features">
     <div class="container">
       <div class="section-header text-center">
-        <h2>Built for real life</h2>
-        <p class="text-secondary">Quick logging, deep tracking, zero clutter.</p>
+        <h2 data-i18n="features.title">Built for real life</h2>
+        <p class="text-secondary" data-i18n="features.sub">Quick logging, deep tracking, zero clutter.</p>
       </div>
       <div class="row g-4">
         <div class="col-md-6 col-lg-4">
           <article class="feature-card h-100">
             <div class="feature-icon bg-success-subtle text-success"><i class="bi bi-camera-fill"></i></div>
-            <h3>AI meal logging</h3>
-            <p>Photo, camera, or text — get a full nutrition breakdown in seconds. No manual database hunting.</p>
+            <h3 data-i18n="feature1.title">AI meal logging</h3>
+            <p data-i18n="feature1.desc">Photo, camera, or text — get a full nutrition breakdown in seconds. No manual database hunting.</p>
           </article>
         </div>
         <div class="col-md-6 col-lg-4">
           <article class="feature-card h-100">
             <div class="feature-icon bg-warning-subtle text-warning"><i class="bi bi-bar-chart-fill"></i></div>
-            <h3>8 nutrients, color-coded</h3>
-            <p>Calories, protein, carbs, fat, fiber, sugar, saturated fat, and sodium — progress at a glance.</p>
+            <h3 data-i18n="feature2.title">8 nutrients, color-coded</h3>
+            <p data-i18n="feature2.desc">Calories, protein, carbs, fat, fiber, sugar, saturated fat, and sodium — progress at a glance.</p>
           </article>
         </div>
         <div class="col-md-6 col-lg-4">
           <article class="feature-card h-100">
             <div class="feature-icon bg-primary-subtle text-primary"><i class="bi bi-chat-heart-fill"></i></div>
-            <h3>Personal coach</h3>
-            <p>Chat that knows your goals, logs, and habits. Attach photos or PDFs for context.</p>
+            <h3 data-i18n="feature3.title">Personal coach</h3>
+            <p data-i18n="feature3.desc">Chat that knows your goals, logs, and habits. Attach photos or PDFs for context.</p>
           </article>
         </div>
         <div class="col-md-6 col-lg-4">
           <article class="feature-card h-100">
             <div class="feature-icon bg-purple-subtle text-purple"><i class="bi bi-journal-bookmark-fill"></i></div>
-            <h3>Recipes &amp; quick items</h3>
-            <p>Save go-to meals once. Log them instantly from Home with a simple slash command.</p>
+            <h3 data-i18n="feature4.title">Recipes &amp; quick items</h3>
+            <p data-i18n="feature4.desc">Save go-to meals once. Log them instantly from Home with a simple slash command.</p>
           </article>
         </div>
         <div class="col-md-6 col-lg-4">
           <article class="feature-card h-100">
             <div class="feature-icon bg-danger-subtle text-danger"><i class="bi bi-bullseye"></i></div>
-            <h3>Smart goals</h3>
-            <p>Targets tailored to your body, activity, and goal — fat loss, maintenance, muscle gain, or better habits.</p>
+            <h3 data-i18n="feature5.title">Smart goals</h3>
+            <p data-i18n="feature5.desc">Targets tailored to your body, activity, and goal — fat loss, maintenance, muscle gain, or better habits.</p>
           </article>
         </div>
         <div class="col-md-6 col-lg-4">
           <article class="feature-card h-100">
             <div class="feature-icon bg-info-subtle text-info"><i class="bi bi-calendar3"></i></div>
-            <h3>History &amp; export</h3>
-            <p>Browse any day on the calendar. Export meals, goals, recipes, and weight history as CSV anytime.</p>
+            <h3 data-i18n="feature6.title">History &amp; export</h3>
+            <p data-i18n="feature6.desc">Browse any day on the calendar. Export meals, goals, recipes, and weight history as CSV anytime.</p>
           </article>
         </div>
       </div>
@@ -221,53 +166,53 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-5 nutrients-copy">
-          <h2>Eight nutrients, one glance</h2>
-          <p class="text-secondary lead-sm mb-0">Color-coded progress on Home and History — green on track, warming as you near your limit.</p>
+          <h2 data-i18n="nutrients.title">Eight nutrients, one glance</h2>
+          <p class="text-secondary lead-sm mb-0" data-i18n="nutrients.lead">Color-coded progress on Home and History — green on track, warming as you near your limit.</p>
         </div>
         <div class="col-lg-7">
           <div class="nutrient-dashboard">
             <div class="nutrient-dashboard-header">
-              <span>Today's progress</span>
+              <span data-i18n="nutrients.today">Today's progress</span>
               <span class="nutrient-dashboard-date">Tuesday, Jul 14</span>
             </div>
             <div class="nutrient-rows">
               <div class="nutrient-row">
-                <span class="nutrient-name">Calories</span>
+                <span class="nutrient-name" data-i18n="nutrients.calories">Calories</span>
                 <div class="nutrient-track"><div class="nutrient-fill fill-green" style="width:71%"></div></div>
                 <span class="nutrient-nums">1,420 <small>/ 2,000</small></span>
               </div>
               <div class="nutrient-row">
-                <span class="nutrient-name">Protein</span>
+                <span class="nutrient-name" data-i18n="nutrients.protein">Protein</span>
                 <div class="nutrient-track"><div class="nutrient-fill fill-green" style="width:82%"></div></div>
                 <span class="nutrient-nums">98g <small>/ 120g</small></span>
               </div>
               <div class="nutrient-row">
-                <span class="nutrient-name">Carbs</span>
+                <span class="nutrient-name" data-i18n="nutrients.carbs">Carbs</span>
                 <div class="nutrient-track"><div class="nutrient-fill fill-yellow" style="width:76%"></div></div>
                 <span class="nutrient-nums">142g <small>/ 185g</small></span>
               </div>
               <div class="nutrient-row">
-                <span class="nutrient-name">Fat</span>
+                <span class="nutrient-name" data-i18n="nutrients.fat">Fat</span>
                 <div class="nutrient-track"><div class="nutrient-fill fill-orange" style="width:68%"></div></div>
                 <span class="nutrient-nums">48g <small>/ 70g</small></span>
               </div>
               <div class="nutrient-row">
-                <span class="nutrient-name">Fiber</span>
+                <span class="nutrient-name" data-i18n="nutrients.fiber">Fiber</span>
                 <div class="nutrient-track"><div class="nutrient-fill fill-green" style="width:55%"></div></div>
                 <span class="nutrient-nums">18g <small>/ 32g</small></span>
               </div>
               <div class="nutrient-row">
-                <span class="nutrient-name">Sugar</span>
+                <span class="nutrient-name" data-i18n="nutrients.sugar">Sugar</span>
                 <div class="nutrient-track"><div class="nutrient-fill fill-yellow" style="width:62%"></div></div>
                 <span class="nutrient-nums">38g <small>/ 60g</small></span>
               </div>
               <div class="nutrient-row">
-                <span class="nutrient-name">Sat. fat</span>
+                <span class="nutrient-name" data-i18n="nutrients.satFat">Sat. fat</span>
                 <div class="nutrient-track"><div class="nutrient-fill fill-orange" style="width:44%"></div></div>
                 <span class="nutrient-nums">11g <small>/ 25g</small></span>
               </div>
               <div class="nutrient-row">
-                <span class="nutrient-name">Sodium</span>
+                <span class="nutrient-name" data-i18n="nutrients.sodium">Sodium</span>
                 <div class="nutrient-track"><div class="nutrient-fill fill-red" style="width:88%"></div></div>
                 <span class="nutrient-nums">1,760mg <small>/ 2,000mg</small></span>
               </div>
@@ -285,33 +230,32 @@
         <div class="col-lg-6">
           <div class="privacy-visual">
             <div class="privacy-icon-wrap"><i class="bi bi-shield-lock-fill"></i></div>
-            <p class="privacy-tagline">Your journal stays yours</p>
+            <p class="privacy-tagline" data-i18n="privacy.tagline">Your journal stays yours</p>
           </div>
         </div>
         <div class="col-lg-6">
-          <h2>Private by design</h2>
-          <p class="text-secondary lead-sm">Your journal stays on your iPhone — not our servers.</p>
-          <p class="mb-0"><a href="privacy.html" class="text-success fw-semibold text-decoration-none">Read full Privacy Policy →</a></p>
+          <h2 data-i18n="privacy.title">Private by design</h2>
+          <p class="text-secondary lead-sm" data-i18n="privacy.lead">Your journal stays on your iPhone — not our servers.</p>
           <ul class="privacy-list">
             <li>
               <i class="bi bi-phone-fill privacy-list-icon text-success"></i>
               <div>
-                <strong>On-device storage</strong>
-                <span>Your nutrition journal lives on your phone, under your control.</span>
+                <strong data-i18n="privacy.item1.title">On-device storage</strong>
+                <span data-i18n="privacy.item1.desc">Your nutrition journal lives on your phone, under your control.</span>
               </div>
             </li>
             <li>
               <i class="bi bi-stars privacy-list-icon text-primary"></i>
               <div>
-                <strong>AI when you need it</strong>
-                <span>Meal analysis and coaching use Google's Gemini API only when you trigger them.</span>
+                <strong data-i18n="privacy.item2.title">AI when you need it</strong>
+                <span data-i18n="privacy.item2.desc">Meal analysis and coaching use Google's Gemini API only when you trigger them.</span>
               </div>
             </li>
             <li>
               <i class="bi bi-download privacy-list-icon text-info"></i>
               <div>
-                <strong>Export anytime</strong>
-                <span>Download a CSV of your data from Settings whenever you want.</span>
+                <strong data-i18n="privacy.item3.title">Export anytime</strong>
+                <span data-i18n="privacy.item3.desc">Download a CSV of your data from Settings whenever you want.</span>
               </div>
             </li>
           </ul>
@@ -325,11 +269,11 @@
     <div class="container cta-shell">
       <div class="cta-card fade-in">
         <span class="cta-mark">🍎</span>
-        <h2>Ready to eat with clarity?</h2>
-        <p class="cta-lead mb-0">Coming soon to the App Store · iOS 18.5+</p>
-        <a class="btn btn-light app-store-btn" href="#" aria-label="Download on the App Store — coming soon">
+        <h2 data-i18n="cta.title">Ready to eat with clarity?</h2>
+        <p class="cta-lead mb-0" data-i18n="cta.lead">Coming soon to the App Store</p>
+        <a class="btn btn-light app-store-btn" href="#" data-i18n-aria="cta.aria" aria-label="Download on the App Store — coming soon">
           <i class="bi bi-apple me-2"></i>
-          App Store — Coming soon
+          <span data-i18n="cta.button">App Store — Coming soon</span>
         </a>
       </div>
       <footer class="site-footer cta-footer">
@@ -337,10 +281,10 @@
           <span class="footer-brand"><span class="brand-icon">🍎</span> Nutrition</span>
           <span class="footer-copy">© 2026 Cookie Technologies Canada</span>
           <nav class="footer-legal" aria-label="Legal">
-            <a class="footer-contact" href="privacy.html">Privacy</a>
-            <a class="footer-contact" href="terms.html">Terms</a>
-            <a class="footer-contact" href="help.html">Help</a>
-            <a class="footer-contact" href="mailto:cookietechnologiescanada@gmail.com">Contact</a>
+            <a class="footer-contact" href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+            <a class="footer-contact" href="terms.html" data-i18n="footer.terms">Terms</a>
+            <a class="footer-contact" href="help.html" data-i18n="footer.help">Help</a>
+            <a class="footer-contact" href="mailto:cookietechnologiescanada@gmail.com" data-i18n="footer.contact">Contact</a>
           </nav>
         </div>
       </footer>
@@ -349,6 +293,7 @@
 
   <!-- Bootstrap 5.3.3 (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

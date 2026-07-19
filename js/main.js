@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  if (window.NutritionI18n) {
+    window.NutritionI18n.init();
+  }
+
   const nav = document.getElementById("mainNav");
 
   function onScroll() {
